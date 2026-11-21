@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DeporZone Canchas</title>
+<meta name="description" content="Reserva canchas de Futsal y Wally en La Paz. PWA con modo offline.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111a2b">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina">
+<header class="cabecera">
+  <a class="cabecera__logo" href="#inicio">DZ <b>DEPORZONE</b></a>
+  <button type="button" class="cabecera__hamburguesa" id="hamb" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav class="cabecera__nav" id="nav" aria-label="Principal">
+    <a class="cabecera__enlace" href="#inicio">Inicio</a>
+    <a class="cabecera__enlace" href="#catalogo">Catálogo</a>
+    <a class="cabecera__enlace" href="#reservar">Reservar</a>
+    <a class="cabecera__enlace" href="#mis-reservas">Mis reservas</a>
+    <a class="cabecera__enlace" href="#servicios">Servicios</a>
+    <a class="cabecera__enlace" href="#info">Información</a>
+  </nav>
+  <span class="cabecera__estado estado-red estado-red--online" id="estadoRed" role="status" aria-live="polite">● En línea</span>
+</header>
+
+<main class="contenido">
+<section class="vista" id="inicio">
+  <div class="portada">
+    <div class="portada__texto">
+      <small class="portada__etiqueta">⚡ TU CANCHA. TU EQUIPO. TU MOMENTO.</small>
+      <h1 class="portada__titulo">JUEGA A<br><em>OTRO NIVEL.</em></h1>
+      <p class="portada__descripcion">Reserva canchas de Futsal y Wally. Elige tu fecha, horario y disfruta el deporte con tu equipo.</p>
+      <a class="boton" href="#reservar">RESERVAR CANCHA ↗</a>
+      <a class="boton boton--secundario" href="#catalogo">VER CATÁLOGO</a>
+      <div class="portada__stats"><b>16 <small>CANCHAS</small></b><b>7/7 <small>DÍAS DEPORTIVOS</small></b><b>100% <small>ACTITUD</small></b></div>
+    </div>
+    <div class="portada__arte"><div class="portada__cancha">⚽<strong>PLAY HARD</strong></div><span class="portada__flotante">🏐 WALLY</span></div>
+  </div>
+  <div class="seccion">
+    <small class="seccion__etiqueta">ELIGE TU EXPERIENCIA</small>
+    <h2 class="seccion__titulo">ESPACIOS PARA <em>JUGAR EN GRANDE.</em></h2>
+    <div class="deportes">
+      <article class="tarjeta-deporte tarjeta-deporte--futsal"><span class="tarjeta-deporte__icono">⚽</span><small>01 / CANCHA TECHADA</small><h3 class="tarjeta-deporte__titulo">FUTSAL</h3><p class="tarjeta-deporte__texto">Partidos intensos, entrenamientos y torneos.</p><b class="tarjeta-deporte__precio">Bs 80 <small>/ hora</small></b><a class="tarjeta-deporte__enlace" href="#reservar" data-deporte="futsal">RESERVAR ↗</a></article>
+      <article class="tarjeta-deporte tarjeta-deporte--wally"><span class="tarjeta-deporte__icono">🏐</span><small>02 / CANCHA MULTIUSO</small><h3 class="tarjeta-deporte__titulo">WALLY</h3><p class="tarjeta-deporte__texto">Disfruta el juego en equipo con tus amigos.</p><b class="tarjeta-deporte__precio">Bs 60 <small>/ hora</small></b><a class="tarjeta-deporte__enlace" href="#reservar" data-deporte="wally">RESERVAR ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="vista" id="catalogo">
+  <div class="encabezado"><small class="encabezado__etiqueta">CATÁLOGO DE CANCHAS</small><h1 class="encabezado__titulo">ELIGE TU <em>ESPACIO.</em></h1><p class="encabezado__texto">Futsal y Wally en distintas zonas. Toca "Reservar" y pasamos directo al formulario.</p></div>
+  <div class="seccion">
+    <div class="filtros" id="filtrosCatalogo">
+      <button type="button" class="filtros__chip filtros__chip--activo" data-filtro="todas">Todas</button>
+      <button type="button" class="filtros__chip" data-filtro="futsal">⚽ Futsal</button>
+      <button type="button" class="filtros__chip" data-filtro="wally">🏐 Wally</button>
+      <span class="filtros__conteo" id="conteoCatalogo" aria-live="polite"></span>
+    </div>
+    <section id="catalogoCanchas" class="catalogo"><p class="catalogo__estado">Cargando canchas…</p></section>
+    <article class="detalle-cancha" id="detalleCancha" hidden aria-live="polite">
+      <h3 class="detalle-cancha__titulo" id="detalleTitulo"></h3>
+      <div class="detalle-cancha__cuerpo" id="detalleProyecto"></div>
+    </article>
+  </div>
+</section>
+
+<section class="vista" id="reservar">
+  <div class="encabezado"><small class="encabezado__etiqueta">RESERVAS ONLINE · DEPORZONE</small><h1 class="encabezado__titulo">APARTA TU <em>CANCHA.</em></h1><p class="encabezado__texto">Selecciona espacio, fecha y horario. El precio se calcula automáticamente.</p></div>
+  <div class="reserva reserva--futsal seccion" id="reservaPanel">
+    <div class="panel">
+      <h2 class="panel__titulo">01 · ELIGE TU CANCHA</h2>
+      <div class="tipos">
+        <button type="button" class="tipos__boton tipos__boton--elegido" data-deporte="futsal">⚽ FUTSAL <small>Bs 80/h</small></button>
+        <button type="button" class="tipos__boton" data-deporte="wally">🏐 WALLY <small>Bs 60/h</small></button>
+      </div>
+      <label class="panel__etiqueta" for="canchaReserva">Cancha específica</label>
+      <select class="campo" id="canchaReserva"></select>
+      <h2 class="panel__titulo">02 · FECHA Y HORARIO</h2>
+      <label class="panel__etiqueta" for="fecha">Fecha de reserva</label>
+      <input class="campo" id="fecha" type="date">
+      <p class="panel__pista">Verde = disponible · Rojo = ocupado</p>
+      <div id="horarios" class="horarios" role="group" aria-label="Horarios"></div>
+      <h2 class="panel__titulo">03 · TIEMPO DE JUEGO</h2>
+      <label class="panel__etiqueta" for="horas">Horas (1 a 5)</label>
+      <div class="contador"><button type="button" class="contador__boton" id="minus" aria-label="Menos horas">−</button><input class="contador__valor" id="horas" type="number" min="1" max="5" value="1"><button type="button" class="contador__boton" id="plus" aria-label="Más horas">+</button></div>
+    </div>
+    <aside class="resumen" id="resumen">
+      <small class="resumen__etiqueta">● RESUMEN DE TU RESERVA</small>
+      <h2 class="resumen__titulo">DETALLE <em>DE COSTOS</em></h2>
+      <div class="resumen__icono" id="ball">⚽</div>
+      <p class="resumen__fila">Cancha <b id="canchaTexto">—</b></p>
+      <p class="resumen__fila">Tipo de cancha <b id="kindText">Futsal</b></p>
+      <p class="resumen__fila">Horario <b id="timeText">Sin seleccionar</b></p>
+      <p class="resumen__fila">Horas <b id="hoursText">1</b></p>
+      <p class="resumen__fila">Precio por hora <b id="rate">Bs 80</b></p>
+      <p class="resumen__fila">Subtotal <b id="subtotal">Bs 80</b></p>
+      <div class="resumen__garantia">GARANTÍA REEMBOLSABLE <b id="guarantee">Bs 40</b><small>Se devuelve al finalizar si no hay daños.</small></div>
+      <h3 class="resumen__total">TOTAL A CANCELAR <strong id="total">Bs 120</strong></h3>
+      <button type="button" id="confirm" class="boton boton--completo">CONFIRMAR RESERVA ↗</button>
+      <small class="resumen__aviso">Demostración académica · No procesa pagos reales</small>
+    </aside>
+  </div>
+</section>
+
+<section class="vista" id="mis-reservas">
+  <div class="encabezado"><small class="encabezado__etiqueta">TUS TURNOS</small><h1 class="encabezado__titulo">MIS <em>RESERVAS.</em></h1><p class="encabezado__texto">Reserva rápida en cualquiera de las 16 canchas, lista de espera y tus reservas confirmadas.</p></div>
+  <div class="seccion modulos">
+    <section class="panel modulo-reservas">
+      <h2 class="panel__titulo">Reserva rápida de cancha y turno</h2>
+      <form id="formReserva" class="formulario" novalidate>
+        <label class="panel__etiqueta" for="clienteNombre">Nombre o equipo</label>
+        <input class="campo" type="text" id="clienteNombre" placeholder="Nombre o equipo" maxlength="40" autocomplete="off" required>
+        <label class="panel__etiqueta" for="canchaSelect">Cancha</label>
+        <select class="campo" id="canchaSelect"></select>
+        <label class="panel__etiqueta" for="turnoSelect">Horario (hoy)</label>
+        <select class="campo" id="turnoSelect"></select>
+        <p class="formulario__error" id="errorReserva" role="alert" hidden>Escribe tu nombre o equipo.</p>
+        <button type="submit" class="boton-accion">Confirmar reserva</button>
+      </form>
+    </section>
+    <section class="panel cola-espera">
+      <h2 class="panel__titulo">Lista de espera</h2>
+      <label class="panel__etiqueta" for="inputEquipo">Equipo o jugador</label>
+      <input class="campo" type="text" id="inputEquipo" placeholder="Anotar equipo o jugador…" maxlength="40" autocomplete="off">
+      <button type="button" id="btnAnotar" class="boton-tactil boton-tactil--ancho">+ Anotar</button>
+      <div id="listaEspera" class="cola-espera__lista"></div>
+    </section>
+    <section class="panel panel--ancho reservas-confirmadas">
+      <h2 class="panel__titulo">Reservas confirmadas</h2>
+      <p class="reservas-confirmadas__vacio" id="reservasVacio">Aún no tienes reservas confirmadas.</p>
+      <ul id="listaReservas" class="lista-segura"></ul>
+      <button type="button" id="btnLimpiarReservas" class="boton-accion boton-accion--peligro" hidden>Limpiar reservas confirmadas</button>
+    </section>
+  </div>
+</section>
+
+<section class="vista" id="servicios">
+  <div class="encabezado"><small class="encabezado__etiqueta">MÁS QUE UNA CANCHA</small><h1 class="encabezado__titulo">ESPACIOS PARA <em>JUGAR.</em></h1></div>
+  <div class="seccion servicios">
+    <article class="servicios__item"><span class="servicios__icono">⚽</span><div class="servicios__texto"><h2>CANCHA DE FUTSAL</h2><p>Espacio para partidos recreativos y competitivos.</p></div><b class="servicios__precio">Bs 80/h</b></article>
+    <article class="servicios__item"><span class="servicios__icono">🏐</span><div class="servicios__texto"><h2>CANCHA DE WALLY</h2><p>Ideal para disfrutar del juego en equipo.</p></div><b class="servicios__precio">Bs 60/h</b></article>
+  </div>
+</section>
+
+<section class="vista" id="info">
+  <div class="encabezado"><small class="encabezado__etiqueta">AYUDA Y CONTROL</small><h1 class="encabezado__titulo">JUEGA CON <em>CONFIANZA.</em></h1></div>
+  <div class="seccion">
+    <div class="acordeon">
+      <article class="acordeon__item"><button type="button" class="acordeon__boton">¿Cómo reservo una cancha? <b>＋</b></button><div class="acordeon__panel">Elige el tipo de cancha, la cancha específica, fecha, horario disponible y cantidad de horas. Revisa el resumen y confirma.</div></article>
+      <article class="acordeon__item"><button type="button" class="acordeon__boton">¿Qué es la garantía? <b>＋</b></button><div class="acordeon__panel">Es un monto reembolsable por el cuidado de las instalaciones. En esta maqueta equivale al 50% del subtotal.</div></article>
+      <article class="acordeon__item"><button type="button" class="acordeon__boton">¿Qué significa un horario rojo? <b>＋</b></button><div class="acordeon__panel">Es un horario ocupado que no puede seleccionarse.</div></article>
+      <article class="acordeon__item"><button type="button" class="acordeon__boton">¿Funciona sin internet? <b>＋</b></button><div class="acordeon__panel">Sí. Si pierdes la conexión, tu reserva se guarda en el dispositivo como "Pendiente de envío" y se verifica sola al volver la red.</div></article>
+      <article class="acordeon__item"><button type="button" class="acordeon__boton">¿Se realiza un pago real? <b>＋</b></button><div class="acordeon__panel">No. La web es una demostración académica sin conexión a pasarela de pago.</div></article>
+    </div>
+    <div class="bitacora"><h2 class="bitacora__titulo">BITÁCORA DE ACTIVIDAD</h2><button type="button" class="bitacora__limpiar" id="clear">LIMPIAR</button><div class="bitacora__registro" id="logs">Sesión iniciada.</div></div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">DEPORZONE CANCHAS · © 2026 <a class="pie__enlace" href="#reservar">RESERVAR ↗</a></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+  <div class="modal__caja">
+    <button type="button" id="x" class="modal__cerrar" aria-label="Cerrar">×</button>
+    <small>ÚLTIMO PASO</small>
+    <h2 class="modal__titulo" id="modalTitulo">CONFIRMAR <em>RESERVA.</em></h2>
+    <p class="modal__intro">Verifica el detalle antes de procesar tu solicitud.</p>
+    <p class="modal__fila">Servicio <b id="mKind">Futsal</b></p>
+    <p class="modal__fila">Horario <b id="mTime">—</b></p>
+    <p class="modal__fila">Monto a cancelar <b id="mTotal">Bs 120</b></p>
+    <div class="modal__tiempo">TIEMPO RESTANTE <strong id="timer">00:30</strong></div>
+    <button type="button" id="cancel" class="modal__cancelar">CANCELAR</button>
+    <button type="button" id="process" class="boton">PROCESAR RESERVA ↗</button>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="vendor/jquery-3.6.1.min.js"></script>
+<script src="vendor/purify-3.4.14.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

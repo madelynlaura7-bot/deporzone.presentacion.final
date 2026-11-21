@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "titulo": "Futsal Central",
+    "deporte": "futsal",
+    "zona": "Zona Sur",
+    "detalle": "Cancha techada con piso sintético",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-01.svg",
+    "descripcionHtml": "<p><strong>Futsal Central</strong> en <em>Zona Sur</em>.</p><ul><li>Cancha techada con piso sintético</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 2,
+    "titulo": "Futsal Norte",
+    "deporte": "futsal",
+    "zona": "Zona Norte",
+    "detalle": "Iluminación LED para partidos nocturnos",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-02.svg",
+    "descripcionHtml": "<p><strong>Futsal Norte</strong> en <em>Zona Norte</em>.</p><ul><li>Iluminación LED para partidos nocturnos</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 3,
+    "titulo": "Futsal Torneos",
+    "deporte": "futsal",
+    "zona": "Zona Sur",
+    "detalle": "Graderías y marcador para torneos",
+    "jugadores": 12,
+    "precio": 80,
+    "portada": "img/cancha-03.svg",
+    "descripcionHtml": "<p><strong>Futsal Torneos</strong> en <em>Zona Sur</em>.</p><ul><li>Graderías y marcador para torneos</li><li>Capacidad: 12 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 4,
+    "titulo": "Futsal Entrenamiento",
+    "deporte": "futsal",
+    "zona": "Miraflores",
+    "detalle": "Ideal para prácticas de equipo",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-04.svg",
+    "descripcionHtml": "<p><strong>Futsal Entrenamiento</strong> en <em>Miraflores</em>.</p><ul><li>Ideal para prácticas de equipo</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 5,
+    "titulo": "Futsal Premium",
+    "deporte": "futsal",
+    "zona": "Sopocachi",
+    "detalle": "Vestuarios con duchas incluidos",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-05.svg",
+    "descripcionHtml": "<p><strong>Futsal Premium</strong> en <em>Sopocachi</em>.</p><ul><li>Vestuarios con duchas incluidos</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 6,
+    "titulo": "Futsal Familiar",
+    "deporte": "futsal",
+    "zona": "Calacoto",
+    "detalle": "Espacio cómodo para partidos recreativos",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-06.svg",
+    "descripcionHtml": "<p><strong>Futsal Familiar</strong> en <em>Calacoto</em>.</p><ul><li>Espacio cómodo para partidos recreativos</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 7,
+    "titulo": "Futsal Express",
+    "deporte": "futsal",
+    "zona": "Obrajes",
+    "detalle": "Reservas rápidas entre semana",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-07.svg",
+    "descripcionHtml": "<p><strong>Futsal Express</strong> en <em>Obrajes</em>.</p><ul><li>Reservas rápidas entre semana</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 8,
+    "titulo": "Futsal Estudiantes",
+    "deporte": "futsal",
+    "zona": "San Pedro",
+    "detalle": "Pensada para ligas universitarias",
+    "jugadores": 10,
+    "precio": 80,
+    "portada": "img/cancha-08.svg",
+    "descripcionHtml": "<p><strong>Futsal Estudiantes</strong> en <em>San Pedro</em>.</p><ul><li>Pensada para ligas universitarias</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 80 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 9,
+    "titulo": "Wally Central",
+    "deporte": "wally",
+    "zona": "Zona Sur",
+    "detalle": "Cancha multiuso con red reglamentaria",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-09.svg",
+    "descripcionHtml": "<p><strong>Wally Central</strong> en <em>Zona Sur</em>.</p><ul><li>Cancha multiuso con red reglamentaria</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 10,
+    "titulo": "Wally Playa",
+    "deporte": "wally",
+    "zona": "Calacoto",
+    "detalle": "Piso de arena fina para jugar descalzo",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-10.svg",
+    "descripcionHtml": "<p><strong>Wally Playa</strong> en <em>Calacoto</em>.</p><ul><li>Piso de arena fina para jugar descalzo</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 11,
+    "titulo": "Wally Norte",
+    "deporte": "wally",
+    "zona": "Zona Norte",
+    "detalle": "Iluminación LED y área de descanso",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-11.svg",
+    "descripcionHtml": "<p><strong>Wally Norte</strong> en <em>Zona Norte</em>.</p><ul><li>Iluminación LED y área de descanso</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 12,
+    "titulo": "Wally Amigos",
+    "deporte": "wally",
+    "zona": "Miraflores",
+    "detalle": "Perfecta para reuniones entre amigos",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-12.svg",
+    "descripcionHtml": "<p><strong>Wally Amigos</strong> en <em>Miraflores</em>.</p><ul><li>Perfecta para reuniones entre amigos</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 13,
+    "titulo": "Wally Torneos",
+    "deporte": "wally",
+    "zona": "Sopocachi",
+    "detalle": "Marcador y espacio para espectadores",
+    "jugadores": 10,
+    "precio": 60,
+    "portada": "img/cancha-13.svg",
+    "descripcionHtml": "<p><strong>Wally Torneos</strong> en <em>Sopocachi</em>.</p><ul><li>Marcador y espacio para espectadores</li><li>Capacidad: 10 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 14,
+    "titulo": "Wally Familiar",
+    "deporte": "wally",
+    "zona": "Obrajes",
+    "detalle": "Ambiente tranquilo para toda la familia",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-14.svg",
+    "descripcionHtml": "<p><strong>Wally Familiar</strong> en <em>Obrajes</em>.</p><ul><li>Ambiente tranquilo para toda la familia</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 15,
+    "titulo": "Wally Sunset",
+    "deporte": "wally",
+    "zona": "Irpavi",
+    "detalle": "Mejor horario al atardecer",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-15.svg",
+    "descripcionHtml": "<p><strong>Wally Sunset</strong> en <em>Irpavi</em>.</p><ul><li>Mejor horario al atardecer</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  },
+  {
+    "id": 16,
+    "titulo": "Wally Estudiantes",
+    "deporte": "wally",
+    "zona": "San Pedro",
+    "detalle": "Cancha ideal para ligas escolares",
+    "jugadores": 8,
+    "precio": 60,
+    "portada": "img/cancha-16.svg",
+    "descripcionHtml": "<p><strong>Wally Estudiantes</strong> en <em>San Pedro</em>.</p><ul><li>Cancha ideal para ligas escolares</li><li>Capacidad: 8 jugadores</li><li>Tarifa: <b>Bs 60 por hora</b></li><li>Garantía reembolsable del 50%</li></ul>"
+  }
+]
